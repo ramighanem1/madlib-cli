@@ -4,7 +4,7 @@
 
 ## to run madlib game:
 
-    source env/bin/activate
+    source .venv/bin/activate
     pip install -r requirements.txt
     pytest
     python madlib_cli/madlib.py

@@ -41,8 +41,8 @@ def user_input(parts):
         user_inputs.append(one_input)
     return user_inputs
 
-def add_to_file(merge_madlib):
-    with open("assets/result.txt", "w") as file:
+def add_to_file(merge_madlib,resultpath1):
+    with open(resultpath1, "w") as file:
         file.write(merge_madlib)
 
 
@@ -50,10 +50,19 @@ def add_to_file(merge_madlib):
 
 if __name__ == "__main__":
     welcome()
-    template = read_template("assets/dark_and_stormy_night_template.txt")
+    path1="assets/dark_and_stormy_night_template.txt"
+    path2="assets/full_text.txt"
+    resultpath1="assets/result1.txt"
+    resultpath2 = "assets/result2.txt"
+
+    template = read_template(path1)
+    # template = read_template(path2)
+
     stripped, parts = parse_template(template)
     user_inputs = user_input(parts)
     merge_madlib = merge(stripped, user_inputs)
-    add_to_file(merge_madlib)
+    add_to_file(merge_madlib,resultpath1)
+    # add_to_file(merge_madlib,resultpath2)
+
     print(merge_madlib)
     
